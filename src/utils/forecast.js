@@ -25,8 +25,9 @@ const forecast = (latitude, longitude, callback) => {
         if (error) {
             callback('Unable to connect to weather service!', undefined)
         } else if (response.body.error) {
-            callback('Unable to find location', undefined)
+            callback('Unable to find the fucking location', undefined)
         } else {
+            console.log(body.daily.data[0])
             callback(undefined, response.body.current.weather_descriptions[0] + '. It is currently ' + response.body.current.temperature + ' degress out. ')
         }
     })
